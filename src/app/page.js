@@ -14,11 +14,8 @@ export default function Home() {
           height={37}
           priority
         />
-      </div>
-      
-      {/* Componente Show */}
+      </div>      
       <Show />
-
     </section>
   );
 }

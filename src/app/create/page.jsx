@@ -9,13 +9,12 @@ const Create = () => {
   const onSubmitCreate = async (formData) => {
     console.log("Datos capturados del Form: ", formData);
     const { name, age } = formData;
-    
+
     if (!formData) {
       alert("Complete the fields.");
       return;
     }
     //console.log(`Name: ${name} Age: ${age}`);
-    //console.log(process.env.URI);
     try {
       const response = await fetch(uri, {
         method: "POST",

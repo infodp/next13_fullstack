@@ -8,7 +8,6 @@ const Form = ({ formValues, onSubmitForm }) => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
 
-  // Capturamos los valores del formulario en el caso de editar
   useEffect(() => {
     if (formValues) {
       setName(formValues.name);
@@ -20,14 +19,14 @@ const Form = ({ formValues, onSubmitForm }) => {
     router.back();
   };
 
-  const onSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formData = { name, age };
     onSubmitForm(formData);
   };
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col gap-3">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
       <input
         className="border border-slate-500 px-8 py-2"
         type="text"
@@ -42,13 +41,13 @@ const Form = ({ formValues, onSubmitForm }) => {
         value={age}
         onChange={(e) => setAge(e.target.value)}
       />
-      <button className="bg-indigo-500 text-white font-bold p-3 px-6">
+      <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold p-3 px-6">
         Save
       </button>
       <button
         onClick={btnBack}
         type="button"
-        className="bg-gray-400 hover:bg-gray-600 text-white font-bold p-3 px-6 text-center"
+        className="bg-gray-400 hover:bg-gray-600 text-white font-bold p-3 px-6"
       >
         Cancel
       </button>

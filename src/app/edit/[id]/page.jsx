@@ -26,7 +26,6 @@ const Edit = async ({ params }) => {
   const onSubmitEdit = async (formData) => {
     console.log("formData:", formData);
     const { name, age } = formData;
-    // Add API call or logic to edit the record using formData
     try {
       const response = await fetch(`${uri}/${id}`, {
         method: "PUT",
@@ -48,7 +47,7 @@ const Edit = async ({ params }) => {
 
   return (
     <div>
-      <Form onSubmitForm={onSubmitEdit} formValues={data}/>
+      <Form onSubmitForm={onSubmitEdit} formValues={data} />
     </div>
   );
 };
