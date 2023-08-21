@@ -3,7 +3,7 @@ import BtnDelete from "./BtnDelete";
 
 const getData = async () => {
   try {
-    const response = await fetch(process.env.URI, { cache: "no-store" });
+    const response = await fetch(`${process.env.URI}/api/student/`, { cache: "no-store" });
     return response.json();
   } catch (error) {
     console.log("Error : ", error);
