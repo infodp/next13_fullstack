@@ -1,7 +1,7 @@
 "use client";
 import Form from "@/components/Form";
 import { useRouter } from "next/navigation";
-//const uri = "http://localhost:3000/api/student";
+const uri = "http://localhost:3000/api/student";
 
 const Create = () => {
   const router = useRouter();
@@ -16,7 +16,7 @@ const Create = () => {
     }
     //console.log(`Name: ${name} Age: ${age}`);
     try {
-      const response = await fetch(`${process.env.URI}/api/student/`, {
+      const response = await fetch(uri, {
         method: "POST",
         headers: {
           "Content-type": "application/json",

@@ -1,11 +1,11 @@
 "use client";
 import Form from "@/components/Form";
 import { useRouter } from "next/navigation";
-//const uri = "http://localhost:3000/api/student";
+const uri = "http://localhost:3000/api/student";
 
 const getDataById = async (id) => {
   try {
-    const response = await fetch(`${process.env.URI}/api/student/${id}`, { cache: "no-store" });
+    const response = await fetch(`${uri}/${id}`, { cache: "no-store" });
     if (!response.ok) {
       throw new Error("Failed to update.");
     }
@@ -27,7 +27,7 @@ const Edit = async ({ params }) => {
     console.log("formData:", formData);
     const { name, age } = formData;
     try {
-      const response = await fetch(`${process.env.URI}/api/student/${id}`, {
+      const response = await fetch(`${uri}/${id}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",

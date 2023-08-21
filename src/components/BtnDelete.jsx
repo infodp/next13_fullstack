@@ -5,7 +5,7 @@ import withReactContent from "sweetalert2-react-content";
 
 import { useRouter } from "next/navigation";
 
-//const uri = "http://localhost:3000/api/student";
+const uri = "http://localhost:3000/api/student";
 
 const BtnDelete = ({ id }) => {
   const router = useRouter();
@@ -22,7 +22,7 @@ const BtnDelete = ({ id }) => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const response = await fetch(`${process.env.URI}/api/student/${id}`, {
+        const response = await fetch(`${uri}/${id}`, {
           method: "DELETE",
         });
         if (response.ok) {
